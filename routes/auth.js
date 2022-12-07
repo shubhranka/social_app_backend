@@ -2,6 +2,10 @@ const express = require('express');
 
 const router = express.Router();
 
+const User = require('../models/user');
+const authController = require('../controllers/auth');
+const isAuth = require('../middleware/is-auth');
+
 router.put(
   '/signup',
   [
@@ -27,7 +31,7 @@ router.put(
   authController.signup
 );
 
-router.post('/login', authController.login);
+router.get('/status', isAuth, authController.getUserStatus);
 
 router.get('/status', ()=>{});
 
