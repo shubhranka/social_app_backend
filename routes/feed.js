@@ -12,7 +12,8 @@ router.get('/posts', isAuth, feedController.getPosts);
 // POST /feed/post
 router.post(
   '/post',
-  () => {},
+  isAuth,
+  feedController.createPost
 );
 
 router.get('/post/:postId', ()=>{});
