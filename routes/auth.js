@@ -27,7 +27,7 @@ router.put(
   authController.signup
 );
 
-router.post('/login', ()=>{});
+router.post('/login', authController.login);
 
 router.get('/status', ()=>{});
 
