@@ -37,7 +37,14 @@ router.get('/status', ()=>{});
 
 router.patch(
   '/status',
-  ()=>{}
+  isAuth,
+  [
+    body('status')
+      .trim()
+      .not()
+      .isEmpty()
+  ],
+  authController.updateUserStatus
 );
 
 module.exports = router;
