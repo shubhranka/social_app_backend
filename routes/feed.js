@@ -26,7 +26,6 @@ router.post(
 
 router.get('/post/:postId', isAuth, feedController.getPost);
 
-
 router.put(
   '/post/:postId',
   isAuth,
